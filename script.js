@@ -11,7 +11,7 @@ const containerWidth = sketchpad.offsetWidth;
 for (let i = 0; i < 256; i++) {
   const newDiv = document.createElement("div");
   newDiv.classList.toggle("grid");
-  newDiv.style.height = `${containerHeight / 16}px`;
+  newDiv.style.height = `${containerHeight / 16}px`; // Requires page reload to work if viewport is changed
   newDiv.style.width = `${containerWidth / 16}px`;
   sketchpad.appendChild(newDiv);
 }
