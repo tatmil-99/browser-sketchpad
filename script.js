@@ -16,8 +16,7 @@ function createSketchpad() {
 }
 
 function fillGrid(e) {
-  console.log(e);
-  e.target.style.backgroundColor = "black";
+  e.target.classList.toggle("grid-color");
 }
 
 function draw() {

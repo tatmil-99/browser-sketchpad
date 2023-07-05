@@ -61,3 +61,7 @@ h1 {
   width: 37.5px; */
   border: solid black 1px;
 }
+
+.grid-color {
+  background-color: black;
+}
