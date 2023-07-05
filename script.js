@@ -1,17 +1,26 @@
-// Create reference to sketch container node
-// Create x divs based on grid selection (16x16, a = 256);
-// Create size of grid based on height and width of container / grid selection (h = 600 / 16, w = 600 / 16)
-// Apply classname and styling to divs
-// Append to parent node
+createSketchpad();
+draw();
 
-const sketchpad = document.querySelector(".sketch-container");
-const containerHeight = sketchpad.offsetHeight;
-const containerWidth = sketchpad.offsetWidth;
+function createSketchpad() {
+  const container = document.querySelector(".sketch-container");
+  const containerHeight = container.offsetHeight;
+  const containerWidth = container.offsetWidth;
 
-for (let i = 0; i < 256; i++) {
-  const newDiv = document.createElement("div");
-  newDiv.classList.toggle("grid");
-  newDiv.style.height = `${containerHeight / 16}px`; // Requires page reload to work if viewport is changed
-  newDiv.style.width = `${containerWidth / 16}px`;
-  sketchpad.appendChild(newDiv);
+  for (let i = 0; i < 256; i++) {
+    const grid = document.createElement("div");
+    grid.classList.toggle("grid");
+    grid.style.height = `${containerHeight / 16}px`; // Requires page reload to work if viewport is changed
+    grid.style.width = `${containerWidth / 16}px`;
+    container.appendChild(grid);
+  }
+}
+
+function fillGrid(e) {
+  console.log(e);
+  e.target.style.backgroundColor = "black";
+}
+
+function draw() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => grid.addEventListener("mouseover", fillGrid));
 }
