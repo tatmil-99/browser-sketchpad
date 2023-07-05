@@ -8,7 +8,7 @@ function createSketchpad() {
 
   for (let i = 0; i < 256; i++) {
     const grid = document.createElement("div");
-    grid.classList.toggle("grid");
+    grid.classList.add("grid");
     grid.style.height = `${containerHeight / 16}px`; // Requires page reload to work if viewport is changed
     grid.style.width = `${containerWidth / 16}px`;
     container.appendChild(grid);
@@ -16,7 +16,7 @@ function createSketchpad() {
 }
 
 function fillGrid(e) {
-  e.target.classList.toggle("grid-color");
+  e.target.classList.add("grid-color");
 }
 
 function draw() {
