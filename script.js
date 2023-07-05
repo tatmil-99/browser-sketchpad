@@ -15,11 +15,24 @@ function createSketchpad() {
   }
 }
 
-function fillGrid(e) {
-  e.target.classList.add("grid-color");
-}
-
 function draw() {
   const grids = document.querySelectorAll(".grid");
-  grids.forEach((grid) => grid.addEventListener("mouseover", fillGrid));
+  let isDrawing = false;
+
+  const handleMousedown = (e) => {
+    isDrawing = true;
+    e.target.classList.add("grid-color");
+  };
+
+  const handleMouseover = (e) => {
+    if (isDrawing) {
+      e.target.classList.add("grid-color");
+    }
+  };
+
+  grids.forEach((grid) => {
+    grid.addEventListener("mousedown", handleMousedown);
+    grid.addEventListener("mouseover", handleMouseover);
+    grid.addEventListener("mouseup", (e) => (isDrawing = false));
+  });
 }
