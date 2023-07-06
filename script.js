@@ -11,7 +11,7 @@ function createSketchpad(input = 16) {
   for (let i = 0; i < area; i++) {
     const grid = document.createElement("div");
     grid.classList.add("grid");
-    grid.style.height = `${containerHeight / input}px`; // Requires page reload to work if viewport is changed
+    grid.style.height = `${containerHeight / input}px`;
     grid.style.width = `${containerWidth / input}px`;
     container.appendChild(grid);
   }
@@ -41,11 +41,17 @@ function draw() {
 
 function validateInput() {
   let input;
+
   do input = +prompt("Enter grid size. E.g. 32 for 32x32 grid", 32);
   while (input > 100 || isNaN(input));
-  return input;
+
+  return input == 0 ? 16 : input; // Reverts grid to default of 16x16 if prompt is cancelled.
 }
 
+/*
+Add functionality somewhere that stores previous input and uses that input when 
+user cancels prompt.
+*/
 function handleGridChange() {
   const container = document.querySelector(".sketch-container");
   const input = validateInput();
