@@ -42,7 +42,7 @@ function draw() {
 function validateInput() {
   let input;
   do input = +prompt("Enter grid size. E.g. 32 for 32x32 grid", 32);
-  while (input > 100);
+  while (input > 100 || isNaN(input));
   return input;
 }
 
