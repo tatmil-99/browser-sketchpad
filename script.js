@@ -39,9 +39,16 @@ function draw() {
   });
 }
 
+function validateInput() {
+  let input;
+  do input = +prompt("Enter grid size. E.g. 32 for 32x32 grid", 32);
+  while (input > 100);
+  return input;
+}
+
 function handleGridChange() {
   const container = document.querySelector(".sketch-container");
-  const input = +prompt("Enter grid size. E.g. 32 for 32x32 grid", 32);
+  const input = validateInput();
 
   while (container.firstChild) {
     container.removeChild(container.firstChild);
