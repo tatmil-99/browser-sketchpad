@@ -41,7 +41,7 @@ function draw() {
 
 function handleGridChange() {
   const container = document.querySelector(".sketch-container");
-  const input = +prompt("Enter grid size", 16);
+  const input = +prompt("Enter grid size. E.g. 32 for 32x32 grid", 32);
 
   while (container.firstChild) {
     container.removeChild(container.firstChild);
