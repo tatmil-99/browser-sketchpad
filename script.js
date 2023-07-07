@@ -52,6 +52,7 @@ function handleGridChange() {
   const container = document.querySelector(".sketch-container");
   const input = validateInput();
 
+  // Removes nodes until container is empty for new sketchpad to be created.
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
