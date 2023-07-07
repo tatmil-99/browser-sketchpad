@@ -43,22 +43,13 @@ h1 {
 }
 
 .sketch-container {
-  /* height: 70vh; */
   padding-bottom: 100%;
   width: 100%;
-  /* width: 70%; */
-  /* min-width: 360px;
-  max-width: 600px;
-  min-height: 360px;
-  max-height: 600px; */
-  /* border: solid black 1px; */
   display: flex;
   flex-wrap: wrap;
 }
 
 .grid {
-  /* height: 37.5px;
-  width: 37.5px; */
   border: solid black 1px;
 }
 

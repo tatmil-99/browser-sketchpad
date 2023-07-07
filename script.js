@@ -48,10 +48,6 @@ function validateInput() {
   return input == 0 ? 16 : input; // Reverts grid to default of 16x16 if prompt is cancelled.
 }
 
-/*
-Add functionality somewhere that stores previous input and uses that input when 
-user cancels prompt.
-*/
 function handleGridChange() {
   const container = document.querySelector(".sketch-container");
   const input = validateInput();
